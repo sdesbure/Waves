@@ -1,0 +1,13 @@
+---
+:development:
+  :server: Thin
+  :port: 5252
+  :engine: :Slim
+:test:
+  :server: Thin
+  :port: 5252
+  :engine: :Slim
+:production:
+  :server: Thin
+  :port: 5252
+  :engine: :Slim
