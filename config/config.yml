@@ -1,5 +1,6 @@
 ---
 :development:
+  :collectd_base_path: "/var/lib/collectd"
   :server: Thin
   :port: 5252
   :engine: :Slim
@@ -8,6 +9,7 @@
   :port: 5252
   :engine: :Slim
 :production:
+  :collectd_base_path: "/var/lib/collectd"
   :server: Thin
   :port: 5252
   :engine: :Slim

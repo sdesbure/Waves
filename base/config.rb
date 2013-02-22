@@ -90,6 +90,10 @@ class AppConfig
     @config = load_file('config.yml').freeze
   end
 
+  def load_graphs
+    @graphs = load_file('graphs.yml')
+  end
+
   def load_db_config
     @db = load_file('database.yml').freeze
   end
