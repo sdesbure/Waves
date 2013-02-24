@@ -1,0 +1,7 @@
+h1 List of graphs
+- unless @graphs.empty?
+  table class="table"
+    - for graph in @graphs do
+      tr
+        td.name 
+          a href=Graphs.route(:show, graph[:url]) #{graph[:name]}

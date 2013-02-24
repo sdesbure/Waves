@@ -1,0 +1,20 @@
+- unless @graph.nil? 
+  h1 Graph #{@graph[:name]}
+  div class="well span11"
+    div class="span11 pull-right"
+      select class="pull-right time-select"
+        option value="#{(Time.now - 1.hour).to_i}" last hour
+        option value="#{(Time.now - 2.hour).to_i}" last 2 hours
+        option value="#{(Time.now - 6.hour).to_i}" last 6 hours
+        option value="#{(Time.now - 12.hour).to_i}" last 12 hours
+        option value="#{(Time.now - 24.hour).to_i}" last day
+        option value="#{(Time.now - 3.day).to_i}" last 3 days
+        option value="#{(Time.now - 1.week).to_i}" last week
+        option value="#{(Time.now - 2.week).to_i}" last 2 weeks
+        option value="#{(Time.now - 1.month).to_i}" last month
+        option value="#{(Time.now - 3.month).to_i}" last 3 months
+        option value="#{(Time.now - 6.month).to_i}" last 6 months
+        option value="#{(Time.now - 1.year).to_i}" last year
+        option value="#{(Time.now - 2.year).to_i}" last 2 years
+    div id="container" class="span12 charts-container pull-right" data-source="#{Graphs.route(:series, @graph[:url])}" data-number="#{@graph[:series].count}" data-title="#{@graph[:name]}" data-yAxis0="#{@graph[:yAxis0]}" data-yAxis1="#{@graph[:yAxis1]}"
+

@@ -3,6 +3,7 @@ source :rubygems
 group :development do
   # development environment gems
   gem 'pry'
+  gem 'awesome_print'
 end
 
 group :test do
@@ -15,5 +16,11 @@ end
 
 gem 'e'
 gem 'thin'
-gem 'sprockets'
 gem 'slim'
+gem 'jsonify'
+gem 'rrd-ffi', :require => 'rrd'
+gem 'sprockets'
+gem 'sprockets-sass'
+gem 'coffee-script'
+gem 'uglifier'
+gem 'sqwish'

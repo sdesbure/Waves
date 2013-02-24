@@ -3,7 +3,7 @@ class AppConfig
   include EspressoUtils
 
   DEFAULT_ENV = E__ENVIRONMENTS.first
-  attr_reader :path, :db, :env
+  attr_reader :path, :db, :env, :graphs
 
   def initialize
     @env = (ENV['RACK_ENV'] || DEFAULT_ENV).to_s.to_sym
@@ -15,7 +15,8 @@ class AppConfig
     set_env env
     load_config
     load_db_config
-    @opted_config = {}
+    load_graphs
+   @opted_config = {}
   end
 
   def self.paths
@@ -69,6 +70,10 @@ class AppConfig
 
   def test?
     @env_map[:test]
+  end
+
+  def collectd_path
+    @config[:collectd_base_path]
   end
 
   private

@@ -1,0 +1,4 @@
+json.name @serie.name
+json.type @serie.type
+json.values @serie.values(@start)
+json.number @id
