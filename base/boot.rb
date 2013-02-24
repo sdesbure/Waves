@@ -1,12 +1,12 @@
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
-require 'jsonify/tilt'
+# require 'jsonify/tilt'
 
 # Registering jsonify engine with Tilt.
 # This should be done before controllers loaded
 # otherwise will have to use `engine_ext` to explicitly define templates extension
-Tilt::JsonifyTemplate = Jsonify::Template
+# Tilt::JsonifyTemplate = Jsonify::Template
 
 require 'yaml'
 require File.expand_path('../config', __FILE__)
@@ -23,8 +23,8 @@ App = EspressoApp.new(:automount) do
     %w{javascripts stylesheets images}.each do |type|
       assets.append_path "public/assets/#{type}"
     end
-#    assets.js_compressor = :uglifier
-    #assets.css_compressor = :sqwish
+    assets.js_compressor = :uglifier
+    assets.css_compressor = :sqwish
 end
 
 App.controllers_setup do
@@ -46,6 +46,6 @@ end
 
 DataMapper.finalize if Cfg[:orm] == :DataMapper
 
-EspressoConstants::VIEW__ENGINE_BY_EXT['.jsonify'] = Jsonify::Template
-EspressoConstants::VIEW__ENGINE_BY_SYM[:Jsonify]  = Jsonify::Template
-EspressoConstants::VIEW__EXT_BY_ENGINE[Jsonify::Template] = '.jsonify'.freeze
+# EspressoConstants::VIEW__ENGINE_BY_EXT['.jsonify'] = Jsonify::Template
+# EspressoConstants::VIEW__ENGINE_BY_SYM[:Jsonify]  = Jsonify::Template
+# EspressoConstants::VIEW__EXT_BY_ENGINE[Jsonify::Template] = '.jsonify'.freeze
