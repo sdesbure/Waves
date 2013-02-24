@@ -1,7 +1,7 @@
 class Graphs
   # put here action-specific setups
   before :series do
-    engine :Jsonify
+    engine :Yajl
   end
 
   format_for :series, '.json'

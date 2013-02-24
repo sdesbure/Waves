@@ -96,7 +96,8 @@ class AppConfig
   end
 
   def load_graphs
-    @graphs = load_file('graphs.yml')
+    @graphs = load_file('graphs.yml').freeze
+    puts "graphs: #{@graphs.inspect}"
   end
 
   def load_db_config

@@ -1,0 +1,6 @@
+json = {
+  :name => @serie.name,
+  :type => @serie.type,
+  :values => @serie.values(@start),
+  :number => @id
+}
