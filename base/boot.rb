@@ -24,7 +24,7 @@ App = EspressoApp.new(:automount) do
       assets.append_path "public/assets/#{type}"
     end
     assets.js_compressor = :uglifier
-    assets.css_compressor = :sqwish
+    assets.css_compressor = Sqwish
 end
 
 App.controllers_setup do
